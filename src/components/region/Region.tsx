@@ -49,7 +49,7 @@ export default function Region() {
           <Text color={'gray.500'}>
             {/* eslint-disable-next-line react/no-unescaped-entities */}
             Don't miss any cool events you want to go to! just access it, see
-            the information and guarantee your presence!
+            the information and ensure your presence!
           </Text>
         </Stack>
         <Box h={'25rem'}>
