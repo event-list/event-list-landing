@@ -11,15 +11,15 @@ export default function Layout(props: {
     <>
       <Head>
         <title>
-          {props.title ? `Event List | ${props.title}` : 'Event List | A new way to share your parties'}
+          {props.title
+            ? `Event List | ${props.title}`
+            : 'Event List | A new way to share your parties'}
         </title>
         <link href="https://fonts.cdnfonts.com/css/sifonn" rel="stylesheet" />
       </Head>
-      <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
-        <Header />
-        <main>{props.children}</main>
-        <Footer />
-      </Box>
+      <Header />
+      <main>{props.children}</main>
+      <Footer />
     </>
   );
 }
