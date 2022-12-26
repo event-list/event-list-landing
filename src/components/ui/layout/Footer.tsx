@@ -5,6 +5,7 @@ import {
   Stack,
   Text,
   VisuallyHidden,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import { FaGithub, FaInstagram } from 'react-icons/fa';
@@ -21,7 +22,7 @@ const SocialButton = ({
 }) => {
   return (
     <Button
-      bg='blackAlpha.100'
+      bg="blackAlpha.100"
       rounded={'full'}
       w={8}
       h={8}
@@ -47,16 +48,14 @@ const SocialButton = ({
 export default function Footer() {
   return (
     <Box
-      bg={'gray.900'}
-      color={'gray.200'}
       role="contentinfo"
       position="absolute"
       bottom={'0'}
       left={'0'}
       right={'0'}
-      borderTop="1px"
       as={'footer'}
-      borderTopColor={'gray.700'}
+      bg={useColorModeValue('gray.100', 'gray.900')}
+      color={useColorModeValue('gray.700', 'gray.200')}
     >
       <Container
         as={Stack}

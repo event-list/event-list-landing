@@ -5,12 +5,15 @@ import {
   Text,
   Image,
   useColorModeValue,
+  Button as ButtonChakra,
+  useColorMode,
 } from '@chakra-ui/react';
 import { Inter } from '@next/font/google';
 import React from 'react';
 import { Link } from 'react-scroll';
 import { Logo } from '../Logo';
 import Button from '../button/Button';
+import { HiMoon, HiSun } from 'react-icons/hi';
 
 const inter = Inter({
   weight: '400',
@@ -81,6 +84,8 @@ const MenuItem = ({ children, to = '/', ...rest }: any) => {
 };
 
 const MenuLinks = ({ isOpen }: any) => {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <Box
       display={{ base: isOpen ? 'block' : 'none', md: 'block' }}
@@ -93,6 +98,11 @@ const MenuLinks = ({ isOpen }: any) => {
         direction={['column', 'row', 'row', 'row']}
         pt={[4, 4, 0, 0]}
       >
+        <MenuItem>
+          <ButtonChakra onClick={toggleColorMode}>
+            {colorMode === 'light' ? <HiMoon /> : <HiSun />}
+          </ButtonChakra>
+        </MenuItem>
         <MenuItem to="everyone">
           <Text>Everyone</Text>
         </MenuItem>
@@ -121,7 +131,7 @@ const NavBarContainer = ({ children, ...props }: any) => {
       w="100%"
       mb={8}
       padding={'10px 20px'}
-      bg={useColorModeValue('gray.50', 'gray.900')}
+      bg={useColorModeValue('gray.100', 'gray.900')}
       color={useColorModeValue('gray.700', 'gray.200')}
       height="fit-content"
       {...props}
