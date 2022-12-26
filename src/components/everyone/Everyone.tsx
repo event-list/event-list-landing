@@ -10,7 +10,6 @@ import {
   IconButton,
   createIcon,
   IconProps,
-  useColorModeValue,
   Link,
 } from '@chakra-ui/react';
 import H2Decorated from '../ui/text/H2Decorated';

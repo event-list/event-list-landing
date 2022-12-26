@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Footer from './Footer';
-import { Box, useColorModeValue } from '@chakra-ui/react';
 import { Header } from './Header';
 
 export default function Layout(props: {

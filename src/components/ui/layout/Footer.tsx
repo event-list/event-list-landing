@@ -4,7 +4,6 @@ import {
   Button,
   Stack,
   Text,
-  useColorModeValue,
   VisuallyHidden,
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
@@ -22,7 +21,7 @@ const SocialButton = ({
 }) => {
   return (
     <Button
-      bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
+      bg='blackAlpha.100'
       rounded={'full'}
       w={8}
       h={8}
@@ -34,7 +33,7 @@ const SocialButton = ({
       justifyContent={'center'}
       transition={'background 0.3s ease'}
       _hover={{
-        bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
+        bg: 'whiteAlpha.200',
       }}
     >
       <>
@@ -48,8 +47,8 @@ const SocialButton = ({
 export default function Footer() {
   return (
     <Box
-      bg={useColorModeValue('gray.50', 'gray.900')}
-      color={useColorModeValue('gray.700', 'gray.200')}
+      bg={'gray.900'}
+      color={'gray.200'}
       role="contentinfo"
       position="absolute"
       bottom={'0'}
@@ -57,7 +56,7 @@ export default function Footer() {
       right={'0'}
       borderTop="1px"
       as={'footer'}
-      borderTopColor={useColorModeValue('gray.200', 'gray.700')}
+      borderTopColor={'gray.700'}
     >
       <Container
         as={Stack}
