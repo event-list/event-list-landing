@@ -11,5 +11,5 @@ export const SnowContainer = () => {
 
   const options: RecursivePartial<Options.ParticlesOptions> = { particles };
 
-  return <Particles style={{ zIndex: 0 }} width={'100px'} options={options} init={customInit} />;
+  return <Particles style={{ zIndex: 1 }} width={'100px'} options={options} init={customInit} />;
 };

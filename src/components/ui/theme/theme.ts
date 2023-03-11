@@ -1,10 +1,10 @@
-import { extendTheme } from '@chakra-ui/react';
+import {extendTheme} from '@chakra-ui/react';
 
 export const theme = extendTheme({
   components: {
     Text: {
       baseStyle: {
-        fontFamily: 'Sifonn',
+        fontFamily: 'Noto Sans',
       },
     },
     Container: {

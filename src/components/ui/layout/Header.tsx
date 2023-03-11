@@ -6,10 +6,10 @@ import {
   useColorModeValue,
   useColorMode,
 } from '@chakra-ui/react';
-import { Inter } from '@next/font/google';
+import {Inter} from '@next/font/google';
 import React from 'react';
-import { Link } from 'react-scroll';
-import { Logo } from '../Logo';
+import {Link} from 'react-scroll';
+import {Logo} from '../Logo';
 import Button from '../button/Button';
 
 const inter = Inter({
@@ -26,11 +26,11 @@ export const Header = (props: any) => {
     <NavBarContainer {...props} zIndex={5}>
       <Link to="home" smooth={'easeOutCubic'}>
         <Box h={'60px'}>
-          <Logo />
+          <Logo/>
         </Box>
       </Link>
-      <MenuToggle toggle={toggle} isOpen={isOpen} />
-      <MenuLinks isOpen={isOpen} />
+      <MenuToggle toggle={toggle} isOpen={isOpen}/>
+      <MenuLinks isOpen={isOpen}/>
     </NavBarContainer>
   );
 };
@@ -53,19 +53,19 @@ const MenuIcon = () => (
     fill="#e53e3e"
   >
     <title>Menu</title>
-    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
   </svg>
 );
 
-const MenuToggle = ({ toggle, isOpen }: any) => {
+const MenuToggle = ({toggle, isOpen}: any) => {
   return (
-    <Box display={{ base: 'block', md: 'none' }} onClick={toggle}>
-      {isOpen ? <CloseIcon /> : <MenuIcon />}
+    <Box display={{base: 'block', md: 'none'}} onClick={toggle}>
+      {isOpen ? <CloseIcon/> : <MenuIcon/>}
     </Box>
   );
 };
 
-const MenuItem = ({ children, to = '/', ...rest }: any) => {
+const MenuItem = ({children, to = '/', ...rest}: any) => {
   return (
     <Link to={to} smooth={'easeOutCubic'}>
       <Text
@@ -80,11 +80,11 @@ const MenuItem = ({ children, to = '/', ...rest }: any) => {
   );
 };
 
-const MenuLinks = ({ isOpen }: any) => {
+const MenuLinks = ({isOpen}: any) => {
   return (
     <Box
-      display={{ base: isOpen ? 'block' : 'none', md: 'block' }}
-      flexBasis={{ base: '100%', md: 'auto' }}
+      display={{base: isOpen ? 'block' : 'none', md: 'block'}}
+      flexBasis={{base: '100%', md: 'auto'}}
     >
       <Stack
         spacing={8}
@@ -103,14 +103,14 @@ const MenuLinks = ({ isOpen }: any) => {
           <Text>Region</Text>
         </MenuItem>
         <MenuItem to="waitlist">
-          <Button size="lg" text={'Get started'} />
+          <Button size="lg" text={'Share Now'}/>
         </MenuItem>
       </Stack>
     </Box>
   );
 };
 
-const NavBarContainer = ({ children, ...props }: any) => {
+const NavBarContainer = ({children, ...props}: any) => {
   return (
     <Flex
       as="nav"
@@ -119,7 +119,6 @@ const NavBarContainer = ({ children, ...props }: any) => {
       justify="space-between"
       wrap="wrap"
       w="100%"
-      mb={8}
       padding={'10px 20px'}
       bg={useColorModeValue('gray.100', 'gray.900')}
       color={useColorModeValue('gray.700', 'gray.200')}
