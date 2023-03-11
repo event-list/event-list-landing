@@ -11,7 +11,7 @@ import {
   createIcon, Flex,
   Heading,
   HStack,
-  Icon, Image, SimpleGrid,
+  Icon, SimpleGrid,
   Stack, StackDivider,
   Text,
   useColorModeValue
@@ -19,60 +19,61 @@ import {
 import H1Decorated from "../components/ui/text/H1Decorated";
 import Button from "../components/ui/button/Button";
 import {ReactElement} from "react";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <Layout>
       <SnowContainer/>
-      <Stack py={'10rem'} spacing={20}>
-        <Container as={'section'} id={'home'} maxW={'80%'}>
-          <Flex alignItems={'center'} justifyContent={'center'}>
-            <Stack
+      <Container as={'section'} id={'home'} maxW={'80%'}>
+        <Flex alignItems={'center'} justifyContent={'center'}>
+          <Stack
+            align={'center'}
+            spacing={{base: 8, md: 10}}
+            py={{base: 20, md: 28}}
+          >
+            <Center fontSize={{base: '2xl', md: '5xl'}}>A new way to </Center>
+            <H1Decorated textAlign={'center'}>Share your Events</H1Decorated>
+            <Text color={'gray.400'} textAlign={'center'}>
+              Share your event in a simple way and have access to it&#39;s guest list whenever you want
+            </Text>
+            <HStack
+              direction={'column'}
+              spacing={3}
               align={'center'}
-              spacing={{base: 8, md: 10}}
-              py={{base: 20, md: 28}}
-            >
-              <Heading>
-                <Center fontSize={'5xl'}>A new way to </Center>
-                <H1Decorated>Share your Events</H1Decorated>
-              </Heading>
-              <Text color={'gray.400'}>
-                {/*eslint-disable-next-line react/no-unescaped-entities*/}
-                Share your event in a simple way and have access to it's guest list whenever you want
-              </Text>
-              <HStack
-                direction={'column'}
-                spacing={3}
-                align={'center'}
-                alignSelf={'center'}
-                position={'relative'}>
-                <Button text={'Prices'}
-                />
+              alignSelf={'center'}
+              position={'relative'}>
+              <Link href={'/services#prices'}>
+                <Button text={'Prices'}/>
+              </Link>
+              <Link href={'/'}>
                 <Button text={'Share Now'}/>
-                <Box>
-                  <Icon
-                    as={Arrow}
-                    color={useColorModeValue('gray.800', 'gray.300')}
-                    w={71}
-                    position={'absolute'}
-                    right={-71}
-                    top={'10px'}
-                  />
-                  <Text
-                    fontSize={'lg'}
-                    fontFamily={'Caveat'}
-                    position={'absolute'}
-                    right={'-105px'}
-                    top={'-15px'}
-                    transform={'rotate(10deg)'}>
-                    Starting at R$50
-                  </Text>
-                </Box>
-              </HStack>
-            </Stack>
-          </Flex>
-        </Container>
-        <Box p={4} as={'section'} id={'features'} bgColor={'gray.900'} position={'relative'}>
+              </Link>
+              <Box>
+                <Icon
+                  as={Arrow}
+                  color={useColorModeValue('gray.800', 'gray.300')}
+                  w={71}
+                  position={'absolute'}
+                  right={-71}
+                  top={'10px'}
+                />
+                <Text
+                  fontSize={'lg'}
+                  fontFamily={'Caveat'}
+                  position={'absolute'}
+                  right={'-105px'}
+                  top={'-15px'}
+                  transform={'rotate(10deg)'}>
+                  Starting at R$50
+                </Text>
+              </Box>
+            </HStack>
+          </Stack>
+        </Flex>
+      </Container>
+      <Stack bgColor={'gray.900'} position={'relative'} spacing={{base: 16, sm: "40"}} py={'8rem'}>
+        <Box as={'section'} id={'features'}>
           <Container maxW={'80%'} py={20}>
             <SimpleGrid columns={{base: 1, md: 3}} spacing={10}>
               <Feature
@@ -117,6 +118,9 @@ export default function Home() {
                   Our Goal
                 </Text>
                 <Heading>Software as a Service for you</Heading>
+                <Flex display={{base: 'flex', sm: 'none'}}>
+                  <ControlPanel/>
+                </Flex>
                 <Text color={'gray.400'} fontSize={'lg'}>
                   Our goal is to provide greater practicality and ease in creating and managing your events, putting
                   control of your event participants in your hands.
@@ -178,6 +182,9 @@ export default function Home() {
                   FAQ
                 </Text>
                 <Heading>Frequently Asked Questions</Heading>
+                <Flex display={{base: 'flex', sm: 'none'}}>
+                  <FAQs/>
+                </Flex>
                 <Accordion defaultIndex={[0]} allowMultiple>
                   <AccordionItem>
                     <AccordionButton>
@@ -187,7 +194,8 @@ export default function Home() {
                       <AccordionIcon/>
                     </AccordionButton>
                     <AccordionPanel pb={4}>
-                      To share an event, just access your account, or create one, access the "Share my Event" tab, fill in the information and that's it! Your event is available to everyone!
+                      To share an event, just access your account, or create one, access the &#39;Share my
+                      Event&#39; tab, fill in the information and that&#39;s it! Your event is available to everyone!
                     </AccordionPanel>
                   </AccordionItem>
                   <AccordionItem>
@@ -198,7 +206,9 @@ export default function Home() {
                       <AccordionIcon/>
                     </AccordionButton>
                     <AccordionPanel pb={4}>
-                      To share an event, we are committed to disclosing as much information as possible and important to the user, such as Title, Location, Description, Start Date, Date End, Price, Classification and Flyer.
+                      To share an event, we are committed to disclosing as much information as possible and important to
+                      the user, such as Title, Location, Description, Start Date, Date End, Price, Classification and
+                      Flyer.
                     </AccordionPanel>
                   </AccordionItem>
                   <AccordionItem>
@@ -209,7 +219,8 @@ export default function Home() {
                       <AccordionIcon/>
                     </AccordionButton>
                     <AccordionPanel pb={4}>
-                      Yes, you can manually add as many names as you want to your list. You have the option to add names in the column for any of the prices you have in the event, or move names between these columns.
+                      Yes, you can manually add as many names as you want to your list. You have the option to add names
+                      in the column for any of the prices you have in the event, or move names between these columns.
                     </AccordionPanel>
                   </AccordionItem>
                   <AccordionItem>
@@ -220,7 +231,8 @@ export default function Home() {
                       <AccordionIcon/>
                     </AccordionButton>
                     <AccordionPanel pb={4}>
-                      A user cannot enter alone in the "Free" column of your event. But don't worry, when adding names you can add it in the "Free" column.
+                      A user cannot enter alone in the &#39;Free&#39; column of your event. But don&#39;t worry, when
+                      adding names you can add it in the &#39;Free&#39; column.
                     </AccordionPanel>
                   </AccordionItem>
                   <AccordionItem>
@@ -231,7 +243,8 @@ export default function Home() {
                       <AccordionIcon/>
                     </AccordionButton>
                     <AccordionPanel pb={4}>
-                      To do this, just access your events and click on the document icon, there you will have the option to print the list, download as excel and download as google shhets.
+                      To do this, just access your events and click on the document icon, there you will have the option
+                      to print the list, download as excel and download as google shhets.
                     </AccordionPanel>
                   </AccordionItem>
                 </Accordion>

@@ -221,7 +221,7 @@ module.exports = {
         factor: 1000,
       },
       limit: 60,
-      value: 20,
+      value: 30,
     },
     opacity: {
       random: {
@@ -259,11 +259,11 @@ module.exports = {
     size: {
       random: {
         enable: true,
-        minimumValue: 10,
+        minimumValue: 5,
       },
       value: {
-        min: 10,
-        max: 15,
+        min: 8,
+        max: 12,
       },
       animation: {
         count: 0,
