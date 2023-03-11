@@ -1,4 +1,4 @@
-import { Text, TextProps } from '@chakra-ui/react';
+import {Heading, Text, TextProps} from '@chakra-ui/react';
 
 type H1DecoratedProps = TextProps & {
   children: React.ReactNode
@@ -6,11 +6,10 @@ type H1DecoratedProps = TextProps & {
 
 const H1Decorated = (props: H1DecoratedProps) => {
   return (
-    <Text
+    <Heading
       bgClip="text"
-      as={'span'}
       fontWeight={'bold'}
-      fontSize={{base: '4xl', md: '8xl'}}
+      fontSize={{base: '5xl', md: '8xl'}}
       bgGradient="linear(to-r, red.500,pink.600)"
       {...props}
     />

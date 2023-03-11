@@ -4,13 +4,12 @@ import {
   Stack,
   Text,
   useColorModeValue,
-  useColorMode,
 } from '@chakra-ui/react';
 import {Inter} from '@next/font/google';
 import React from 'react';
-import {Link} from 'react-scroll';
 import {Logo} from '../Logo';
-import Button from '../button/Button';
+import Link from "next/link";
+import Button from "../button/Button";
 
 const inter = Inter({
   weight: '400',
@@ -24,7 +23,7 @@ export const Header = (props: any) => {
 
   return (
     <NavBarContainer {...props} zIndex={5}>
-      <Link to="home" smooth={'easeOutCubic'}>
+      <Link href="/">
         <Box h={'60px'}>
           <Logo/>
         </Box>
@@ -67,7 +66,7 @@ const MenuToggle = ({toggle, isOpen}: any) => {
 
 const MenuItem = ({children, to = '/', ...rest}: any) => {
   return (
-    <Link to={to} smooth={'easeOutCubic'}>
+    <Link href={to}>
       <Text
         fontFamily={inter}
         display="block"
@@ -93,17 +92,14 @@ const MenuLinks = ({isOpen}: any) => {
         direction={['column', 'row', 'row', 'row']}
         pt={[4, 4, 0, 0]}
       >
-        <MenuItem to="everyone">
-          <Text>Everyone</Text>
+        <MenuItem to="/">
+          <Text>Home</Text>
         </MenuItem>
-        <MenuItem to="control">
-          <Text>Control</Text>
+        <MenuItem to="/services">
+          <Text>Services</Text>
         </MenuItem>
-        <MenuItem to="region">
-          <Text>Region</Text>
-        </MenuItem>
-        <MenuItem to="waitlist">
-          <Button size="lg" text={'Share Now'}/>
+        <MenuItem to="/">
+          <Button text={'Share Now'} />
         </MenuItem>
       </Stack>
     </Box>

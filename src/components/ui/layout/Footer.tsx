@@ -48,6 +48,8 @@ const SocialButton = ({
 export default function Footer() {
   return (
     <Box
+      borderTop={'1px'}
+      borderColor='gray.800'
       role="contentinfo"
       position="absolute"
       bottom={'0'}
