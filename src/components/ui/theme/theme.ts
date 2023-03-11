@@ -27,5 +27,4 @@ export const theme = extendTheme({
     },
   },
   initialColorMode: 'dark',
-  useSystemColorMode: false,
 });

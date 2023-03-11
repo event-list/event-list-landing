@@ -3,9 +3,7 @@ import {
   Flex,
   Stack,
   Text,
-  Image,
   useColorModeValue,
-  Button as ButtonChakra,
   useColorMode,
 } from '@chakra-ui/react';
 import { Inter } from '@next/font/google';
@@ -13,7 +11,6 @@ import React from 'react';
 import { Link } from 'react-scroll';
 import { Logo } from '../Logo';
 import Button from '../button/Button';
-import { HiMoon, HiSun } from 'react-icons/hi';
 
 const inter = Inter({
   weight: '400',
@@ -84,8 +81,6 @@ const MenuItem = ({ children, to = '/', ...rest }: any) => {
 };
 
 const MenuLinks = ({ isOpen }: any) => {
-  const { colorMode, toggleColorMode } = useColorMode();
-
   return (
     <Box
       display={{ base: isOpen ? 'block' : 'none', md: 'block' }}
@@ -98,11 +93,6 @@ const MenuLinks = ({ isOpen }: any) => {
         direction={['column', 'row', 'row', 'row']}
         pt={[4, 4, 0, 0]}
       >
-        <MenuItem>
-          <ButtonChakra onClick={toggleColorMode}>
-            {colorMode === 'light' ? <HiMoon /> : <HiSun />}
-          </ButtonChakra>
-        </MenuItem>
         <MenuItem to="everyone">
           <Text>Everyone</Text>
         </MenuItem>
