@@ -56,8 +56,8 @@ export default function Footer() {
       left={'0'}
       right={'0'}
       as={'footer'}
-      bg={useColorModeValue('gray.100', 'gray.900')}
-      color={useColorModeValue('gray.700', 'gray.200')}
+      bg={'gray.900'}
+      color={'gray.200'}
     >
       <Container
         as={Stack}

@@ -41,7 +41,7 @@ export default function Services() {
                   spacing={4}
                   divider={
                     <StackDivider
-                      borderColor={useColorModeValue('gray.100', 'gray.700')}
+                      borderColor={'gray.700'}
                     />
                   }>
                 </Stack>
@@ -137,7 +137,7 @@ export default function Services() {
                     shadow="base"
                     borderWidth="1px"
                     p={6}
-                    borderColor={useColorModeValue('gray.200', 'gray.600')}
+                    borderColor={'gray.600'}
                     borderRadius={'xl'}
                     position="relative"
                   >
@@ -148,10 +148,10 @@ export default function Services() {
                       style={{transform: 'translate(-50%)'}}>
                       <Text
                         textTransform="uppercase"
-                        bg={useColorModeValue('red.300', 'red.700')}
+                        bg={'red.700'}
                         px={3}
                         py={1}
-                        color={useColorModeValue('gray.900', 'gray.300')}
+                        color={'gray.300'}
                         fontSize="sm"
                         fontWeight="600"
                         rounded="xl">

@@ -116,8 +116,8 @@ const NavBarContainer = ({children, ...props}: any) => {
       wrap="wrap"
       w="100%"
       padding={'10px 20px'}
-      bg={useColorModeValue('gray.100', 'gray.900')}
-      color={useColorModeValue('gray.700', 'gray.200')}
+      bg={'gray.900'}
+      color={'gray.200'}
       height="fit-content"
       {...props}
     >
