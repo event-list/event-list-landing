@@ -52,7 +52,7 @@ export default function Home() {
               <Box>
                 <Icon
                   as={Arrow}
-                  color={useColorModeValue('gray.800', 'gray.300')}
+                  color={'gray.300'}
                   w={71}
                   position={'absolute'}
                   right={-71}
@@ -134,7 +134,7 @@ export default function Home() {
                   spacing={4}
                   divider={
                     <StackDivider
-                      borderColor={useColorModeValue('gray.100', 'gray.700')}
+                      borderColor={'gray.700'}
                     />
                   }>
                   <Row
