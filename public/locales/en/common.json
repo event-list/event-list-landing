@@ -1,0 +1,45 @@
+{
+  "new-way": "A new way to ",
+  "share-your-events": "Share your Events",
+  "share-event-short-description": "Share your event in a simple way and have access to it's guest list whenever you want",
+  "prices": "Prices",
+  "share-now": "Share Now",
+  "start-at": "Starting at R$50",
+
+  "control-in-your-hands": "Control in your hands",
+  "control-in-your-hands-description": "Manage the list the way you want, add names, switch names between lots...",
+
+  "available-for-everyone": "Available for everyone",
+  "available-for-everyone-description": "Without red tape, create an account and you can share your event! You don't need to have a company!",
+
+  "guest-list-whenever-you-want": "Guest list whenever you want",
+  "guest-list-whenever-you-want-description": "Take the guest list the way and the time you want, excel, google spreadsheets, printed...",
+
+  "our-goal": "Our Goal",
+  "software-as-a-service-for-you": "Software as a Service for you",
+
+  "our-goal-first-p": "Our goal is to provide greater practicality and ease in creating and managing your events, putting control of your event participants in your hands.",
+  "our-goal-second-p": "You can better organize yourself in terms of promoting your event by referring to the list of attendees, checking who will be attending, preparing to accommodate the expected number of people, and enjoying many other benefits!",
+
+  "greater-management": "Greater management",
+  "greater-flexibility": "Greater flexibility",
+  "greater-confidence": "Greater confidence",
+
+  "faq": "Faq",
+  "frequently-asked-questions": "Frequently Asked Questions",
+
+  "question-what-need-share-event": "What do I need to do to share an event?",
+  "answer-what-need-share-event": "To share an event, just access your account, or create one, access the 'Share my Event' tab, fill in the information and that's it! Your event is available to everyone!",
+
+  "question-what-fill-share-event": "What do I need to fill in to share an event?",
+  "answer-what-fill-share-event": "To promote an event, commit to disclosing as much information as possible and important to the user, such as Title, Location, Description, Start Date, End Date, Price, Rating and Flyer.",
+
+  "question-add-manually-names": "Can I manually add names to the list?",
+  "answer-add-manually-names": "Yes, you can manually add as many names as you want to your list. You have the option to add names in the column for any of the prices you have in the event, or move names between these columns.",
+
+  "question-add-free-names": "How do I get someone to join an event for free?",
+  "answer-add-free-names": "A user cannot enter alone in the 'Free' column of your event. But don't worry, when adding names you can add it in the 'Free' column.",
+
+  "question-get-geust-list": "How do I get my guest list?",
+  "answer-get-geust-list": "To do this, just access your events and click on the document icon, there you will have the option to print the list, download as excel and download as google sheets."
+}
