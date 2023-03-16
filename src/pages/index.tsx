@@ -3,6 +3,7 @@ import {FcConferenceCall, FcNews, FcPrint, FcApproval, FcLineChart, FcFlowChart}
 import ControlPanel from '../components/assets/admin-control-panel.svg'
 import FAQs from '../components/assets/faqs.svg'
 import {SnowContainer} from '../components/ui/particles/SnowContainer';
+import {useTranslation} from 'next-i18next'
 import {
   Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel,
   Box,
@@ -14,14 +15,27 @@ import {
   Icon, SimpleGrid,
   Stack, StackDivider,
   Text,
-  useColorModeValue
 } from "@chakra-ui/react";
 import H1Decorated from "../components/ui/text/H1Decorated";
 import Button from "../components/ui/button/Button";
 import {ReactElement} from "react";
 import Link from "next/link";
+import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
+
+export async function getStaticProps({locale}) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        'common',
+        'header'
+      ])),
+    },
+  }
+}
 
 export default function Home() {
+  const {t} = useTranslation('common')
+
   return (
     <Layout>
       <SnowContainer/>
@@ -32,10 +46,10 @@ export default function Home() {
             spacing={{base: 8, md: 10}}
             py={{base: 20, md: 28}}
           >
-            <Center fontSize={{base: '2xl', md: '5xl'}}>A new way to </Center>
-            <H1Decorated textAlign={'center'}>Share your Events</H1Decorated>
+            <Center fontSize={{base: '2xl', md: '5xl'}}>{t('new-way')}</Center>
+            <H1Decorated textAlign={'center'}>{t('share-your-events')}</H1Decorated>
             <Text color={'gray.400'} textAlign={'center'}>
-              Share your event in a simple way and have access to it&#39;s guest list whenever you want
+              {t('share-event-short-description')}
             </Text>
             <HStack
               direction={'column'}
@@ -44,10 +58,10 @@ export default function Home() {
               alignSelf={'center'}
               position={'relative'}>
               <Link href={'/services#prices'}>
-                <Button text={'Prices'}/>
+                <Button text={t('prices')}/>
               </Link>
               <Link href={'/'}>
-                <Button text={'Share Now'}/>
+                <Button text={t('share-now')}/>
               </Link>
               <Box>
                 <Icon
@@ -65,7 +79,7 @@ export default function Home() {
                   right={'-105px'}
                   top={'-15px'}
                   transform={'rotate(10deg)'}>
-                  Starting at R$50
+                  {t('start-at')}
                 </Text>
               </Box>
             </HStack>
@@ -78,23 +92,23 @@ export default function Home() {
             <SimpleGrid columns={{base: 1, md: 3}} spacing={10}>
               <Feature
                 icon={<Icon as={FcNews} w={10} h={10}/>}
-                title={'Control in your hands'}
+                title={t('control-in-your-hands')}
                 text={
-                  'Manage the list the way you want, add names, switch names between lots...'
+                  t('control-in-your-hands-description')
                 }
               />
               <Feature
                 icon={<Icon as={FcConferenceCall} w={10} h={10}/>}
-                title={'Available for everyone'}
+                title={t('available-for-everyone')}
                 text={
-                  'Without red tape, create an account and you can share your event! You don\'t need to have a company!'
+                  t('available-for-everyone-description')
                 }
               />
               <Feature
                 icon={<Icon as={FcPrint} w={10} h={10}/>}
-                title={'Guest list whenever you want'}
+                title={t('guest-list-whenever-you-want')}
                 text={
-                  'Take the guest list the way and the time you want, excel, google spreadsheets, printed...'
+                  t('guest-list-whenever-you-want-description')
                 }
               />
             </SimpleGrid>
@@ -115,20 +129,17 @@ export default function Home() {
                   p={2}
                   alignSelf={'flex-start'}
                   rounded={'md'}>
-                  Our Goal
+                  {t('our-goal')}
                 </Text>
-                <Heading>Software as a Service for you</Heading>
+                <Heading>{t('software-as-a-service-for-you')}</Heading>
                 <Flex display={{base: 'flex', sm: 'none'}}>
                   <ControlPanel/>
                 </Flex>
                 <Text color={'gray.400'} fontSize={'lg'}>
-                  Our goal is to provide greater practicality and ease in creating and managing your events, putting
-                  control of your event participants in your hands.
+                  {t('our-goal-first-p')}
                 </Text>
                 <Text color={'gray.400'} fontSize={'lg'}>
-                  You can better organize yourself in terms of promoting your event by referring to the list of
-                  attendees, checking who will be attending, preparing to accommodate the expected number of people, and
-                  enjoying many other benefits
+                  {t('our-goal-second-p')}
                 </Text>
                 <Stack
                   spacing={4}
@@ -141,17 +152,17 @@ export default function Home() {
                     icon={
                       <Icon as={FcLineChart} w={10} h={10}/>
                     }
-                    text={'Greater management'}
+                    text={t('greater-management')}
                   />
                   <Row
                     icon={<Icon as={FcFlowChart} w={10} h={10}/>}
-                    text={'Greater flexibility'}
+                    text={t('greater-flexibility')}
                   />
                   <Row
                     icon={
                       <Icon as={FcApproval} w={10} h={10}/>
                     }
-                    text={'Greater confidence'}
+                    text={t('greater-confidence')}
                   />
                 </Stack>
               </Stack>
@@ -179,9 +190,9 @@ export default function Home() {
                   p={2}
                   alignSelf={'flex-start'}
                   rounded={'md'}>
-                  FAQ
+                  {t('faq')}
                 </Text>
-                <Heading>Frequently Asked Questions</Heading>
+                <Heading>{t('frequently-asked-questions')}</Heading>
                 <Flex display={{base: 'flex', sm: 'none'}}>
                   <FAQs/>
                 </Flex>
@@ -189,62 +200,56 @@ export default function Home() {
                   <AccordionItem>
                     <AccordionButton>
                       <Box as="span" flex='1' textAlign='left' fontWeight={600}>
-                        What do I need to do to share an event?
+                        {t('question-what-need-share-event')}
                       </Box>
                       <AccordionIcon/>
                     </AccordionButton>
                     <AccordionPanel pb={4}>
-                      To share an event, just access your account, or create one, access the &#39;Share my
-                      Event&#39; tab, fill in the information and that&#39;s it! Your event is available to everyone!
+                      {t('answer-what-need-share-event')}
                     </AccordionPanel>
                   </AccordionItem>
                   <AccordionItem>
                     <AccordionButton>
                       <Box as="span" flex='1' textAlign='left' fontWeight={600}>
-                        What do I need to fill in to share an event?
+                        {t('question-what-fill-share-event')}
                       </Box>
                       <AccordionIcon/>
                     </AccordionButton>
                     <AccordionPanel pb={4}>
-                      To share an event, we are committed to disclosing as much information as possible and important to
-                      the user, such as Title, Location, Description, Start Date, Date End, Price, Classification and
-                      Flyer.
+                      {t('answer-what-fill-share-event')}
                     </AccordionPanel>
                   </AccordionItem>
                   <AccordionItem>
                     <AccordionButton>
                       <Box as="span" flex='1' textAlign='left' fontWeight={600}>
-                        Can I manually add names to the list?
+                        {t('question-add-manually-names')}
                       </Box>
                       <AccordionIcon/>
                     </AccordionButton>
                     <AccordionPanel pb={4}>
-                      Yes, you can manually add as many names as you want to your list. You have the option to add names
-                      in the column for any of the prices you have in the event, or move names between these columns.
+                      {t('answer-add-manually-names')}
                     </AccordionPanel>
                   </AccordionItem>
                   <AccordionItem>
                     <AccordionButton>
                       <Box as="span" flex='1' textAlign='left' fontWeight={600}>
-                        How do I get someone to join an event for free?
+                        {t('question-add-free-names')}
                       </Box>
                       <AccordionIcon/>
                     </AccordionButton>
                     <AccordionPanel pb={4}>
-                      A user cannot enter alone in the &#39;Free&#39; column of your event. But don&#39;t worry, when
-                      adding names you can add it in the &#39;Free&#39; column.
+                      {t('answer-add-free-names')}
                     </AccordionPanel>
                   </AccordionItem>
                   <AccordionItem>
                     <AccordionButton>
                       <Box as="span" flex='1' textAlign='left' fontWeight={600}>
-                        How do I get my guest list?
+                        {t('question-get-geust-list')}
                       </Box>
                       <AccordionIcon/>
                     </AccordionButton>
                     <AccordionPanel pb={4}>
-                      To do this, just access your events and click on the document icon, there you will have the option
-                      to print the list, download as excel and download as google shhets.
+                      {t('answer-get-geust-list')}
                     </AccordionPanel>
                   </AccordionItem>
                 </Accordion>

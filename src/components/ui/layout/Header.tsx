@@ -10,6 +10,7 @@ import React from 'react';
 import {Logo} from '../Logo';
 import Link from "next/link";
 import Button from "../button/Button";
+import {useTranslation} from "next-i18next";
 
 const inter = Inter({
   weight: '400',
@@ -80,6 +81,8 @@ const MenuItem = ({children, to = '/', ...rest}: any) => {
 };
 
 const MenuLinks = ({isOpen}: any) => {
+  const {t} = useTranslation('header')
+
   return (
     <Box
       display={{base: isOpen ? 'block' : 'none', md: 'block'}}
@@ -93,13 +96,13 @@ const MenuLinks = ({isOpen}: any) => {
         pt={[4, 4, 0, 0]}
       >
         <MenuItem to="/">
-          <Text>Home</Text>
+          <Text>{t('home')}</Text>
         </MenuItem>
         <MenuItem to="/services">
-          <Text>Services</Text>
+          <Text>{t('services')}</Text>
         </MenuItem>
         <MenuItem to="/">
-          <Button text={'Share Now'} />
+          <Button text={t('share-now')} />
         </MenuItem>
       </Stack>
     </Box>
