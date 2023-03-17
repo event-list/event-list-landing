@@ -20,7 +20,8 @@ export async function getStaticProps({locale}) {
     props: {
       ...(await serverSideTranslations(locale, [
         'services',
-        'header'
+        'header',
+        'common'
       ])),
     },
   }
