@@ -2,17 +2,20 @@ import Head from 'next/head';
 import Footer from './Footer';
 import {Header} from './Header';
 import {Box} from "@chakra-ui/react";
+import {useTranslation} from "next-i18next";
 
 export default function Layout(props: {
   title?: string;
   children: React.ReactNode;
 }) {
+  const {t} = useTranslation('common')
+
   return (
     <Box>
       <title>
         {props.title
           ? `Event List | ${props.title}`
-          : 'Event List | A new way to share your events'}
+          : t('title')}
       </title>
       <Header/>
       <Box pt={'80px'} pb={{base: '160px', sm: '70px'}} minH={'100vh'}>
