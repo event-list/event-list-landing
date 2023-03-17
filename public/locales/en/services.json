@@ -1,0 +1,38 @@
+{
+  "services": "Services",
+  "services-goodbye-manual-lists": "Goodbye to manual lists, list of events allows you to create events with all the information necessary for the success of your event. Get access to a platform where you control all your events and announce new ones.",
+  "services-not-event-creator": "If you are not an event creator, feel free to browse the existing event catalog and secure your name on the guest list!",
+
+  "merchant": "Merchant",
+  "share-an-event": "Share an Event",
+  "as-a-merchant": "As a merchant, you can create an account and share your events. There are no limits to published events. Share when you want, for when you want, and how you want.",
+
+  "user": "User",
+  "ensure-your-presence": "Ensure your Presence",
+  "as-an-user": "As a user, you can navigate between the publicized events, check the public information about them, and guarantee your presence in them. You can also browse your favorite labels, see information about them and which events are active for them at that moment!",
+
+  "price": "Price",
+  "pay-per-event": "Pay per event. No subscriptions",
+  "no-montly": "You only pay for what you share, no monthly subscription.",
+  "enjoy-share-an-event": "There is a single charge of R$50 for creating an account as a Merchant, then enjoy sharing as many events as you want",
+
+  "most-popular": "Most Popular",
+  "price-card": {
+    "coin": "R$",
+    "value": "100",
+    "prefix": "/event"
+  },
+
+  "title": "Title",
+  "description": "Description",
+  "flyer": "Flyer",
+  "place": "Place",
+  "price-per-lot": "Price per lot",
+  "date-start": "Date Start",
+  "date-end": "Date End",
+  "list-available-at": "List available At",
+  "classification": "Classification",
+  "status": "Status",
+
+  "share-now": "Share Now"
+}

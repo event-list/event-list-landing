@@ -26,7 +26,7 @@ export async function getStaticProps({locale}) {
   return {
     props: {
       ...(await serverSideTranslations(locale, [
-        'common',
+        'index',
         'header'
       ])),
     },
@@ -34,7 +34,7 @@ export async function getStaticProps({locale}) {
 }
 
 export default function Home() {
-  const {t} = useTranslation('common')
+  const {t} = useTranslation('index')
 
   return (
     <Layout>

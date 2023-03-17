@@ -1,0 +1,38 @@
+{
+  "services": "Serviços",
+  "services-goodbye-manual-lists": "Adeus às listas manuais, a lista de eventos permite criar eventos com todas as informações necessárias para o sucesso do seu evento. Tenha acesso a uma plataforma onde você controla todos os seus eventos e anuncia novos.",
+  "services-not-event-creator": "Se você não é um criador de eventos, fique à vontade para navegar no catálogo de eventos existente e garantir seu nome na lista de convidados!",
+
+  "merchant": "Merchant",
+  "share-an-event": "Compartilhar um Evento",
+  "as-a-merchant": "Como Merchant, você pode criar uma conta e compartilhar seus eventos. Não há limites para eventos publicados. Compartilhe quando quiser, para quando quiser e como quiser.",
+
+  "user": "Usuário",
+  "ensure-your-presence": "Garanta sua Presença",
+  "as-an-user": "Como usuário, você pode navegar entre os eventos divulgados, verificar as informações públicas sobre eles e garantir sua presença neles. Você também pode navegar por suas casa de festa favoritas, ver informações sobre eles e quais eventos estão ativos para eles naquele momento!",
+
+  "price": "Preço",
+  "pay-per-event": "Pague por evento. Sem assinaturas",
+  "no-montly": "Você paga apenas pelo que compartilha, sem assinatura mensal.",
+  "enjoy-share-an-event": "A cobrança é única de R$ 50 para criar uma conta como Merchant, então divirta-se compartilhando quantos eventos quiser",
+
+  "most-popular": "Mais Popular",
+  "price-card": {
+    "coin": "R$",
+    "value": "100",
+    "prefix": "/evento"
+  },
+
+  "title": "Título",
+  "description": "Descrição",
+  "flyer": "Flyer",
+  "place": "Local",
+  "price-per-lot": "Preço por lote",
+  "date-start": "Data de Início",
+  "date-end": "Data de Fim",
+  "list-available-at": "Horario de lista disponível",
+  "classification": "Classificação",
+  "status": "Status",
+
+  "share-now": "Compartilhe Agora"
+}

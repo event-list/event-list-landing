@@ -12,8 +12,23 @@ import {
 } from "@chakra-ui/react";
 import H1Decorated from "../../components/ui/text/H1Decorated";
 import Button from "../../components/ui/button/Button";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+import {useTranslation} from "next-i18next";
+
+export async function getStaticProps({locale}) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        'services',
+        'header'
+      ])),
+    },
+  }
+}
 
 export default function Services() {
+  const {t} = useTranslation('services')
+
   return (
     <Layout>
       <SnowContainer/>
@@ -24,18 +39,15 @@ export default function Services() {
               <Stack
                 spacing={{base: 8, md: 10}}
               >
-                <H1Decorated>Services</H1Decorated>
+                <H1Decorated>{t('services')}</H1Decorated>
                 <Box display={{base: 'flex', sm: 'none'}}>
                   <Image src={'/services-banner.png'} alt={'services-banner'} width={800} height={800}/>
                 </Box>
                 <Text color={'gray.400'} fontSize={'lg'}>
-                  Our goal is to provide greater practicality and ease in creating and managing your events, putting
-                  control of your event participants in your hands.
+                  {t('services-goodbye-manual-lists')}
                 </Text>
                 <Text color={'gray.400'} fontSize={'lg'}>
-                  You can better organize yourself in terms of promoting your event by referring to the list of
-                  attendees, checking who will be attending, preparing to accommodate the expected number of people, and
-                  enjoying many other benefits
+                  {t('services-not-event-creator')}
                 </Text>
                 <Stack
                   spacing={4}
@@ -68,15 +80,11 @@ export default function Services() {
                     p={2}
                     alignSelf={'flex-start'}
                     rounded={'md'}>
-                    Label
+                    {t('merchant')}
                   </Text>
-                  <Heading>Share an Event</Heading>
+                  <Heading>{t('share-an-event')}</Heading>
                   <Text color={'gray.400'} fontSize={'lg'}>
-                    As a label, you can create an account and share your events. There are no limits to published
-                    events. Share when you want, for when you want, and how you want.
-                  </Text>
-                  <Text color={'gray.400'} fontSize={'lg'}>
-                    When sharing an event you can define necessary data!
+                    {t('as-a-merchant')}
                   </Text>
                 </Stack>
                 <Stack
@@ -91,16 +99,11 @@ export default function Services() {
                     p={2}
                     alignSelf={'flex-start'}
                     rounded={'md'}>
-                    User
+                    {t('user')}
                   </Text>
-                  <Heading>Ensure your Presence</Heading>
+                  <Heading>{t('ensure-your-presence')}</Heading>
                   <Text color={'gray.400'} fontSize={'lg'}>
-                    As a user, you can navigate between the publicized events, check the public information about them,
-                    and guarantee your presence in them.
-                  </Text>
-                  <Text color={'gray.400'} fontSize={'lg'}>
-                    You can also browse your favorite labels, see information about them and which events are active for
-                    them at that moment!
+                    {t('as-an-user')}
                   </Text>
                 </Stack>
               </SimpleGrid>
@@ -121,14 +124,14 @@ export default function Services() {
                     p={2}
                     alignSelf={'flex-start'}
                     rounded={'md'}>
-                    Price
+                    {t('price')}
                   </Text>
-                  <Heading>Pay per event. No subscriptions</Heading>
+                  <Heading>{t('pay-per-event')}</Heading>
                   <Text color={'gray.400'} fontSize={'lg'}>
-                    You only pay for what you share, no monthly subscription.
+                    {t('no-montly')}
                   </Text>
                   <Text color={'gray.400'} fontSize={'lg'}>
-                    There is a single charge of R$50 for creating an account as a label, then enjoy sharing as many events as you want
+                    {t('enjoy-share-an-event')}
                   </Text>
                 </Stack>
                 <Flex alignItems={'center'} alignContent={'center'} justifyContent={'center'}>
@@ -155,44 +158,44 @@ export default function Services() {
                         fontSize="sm"
                         fontWeight="600"
                         rounded="xl">
-                        Most Popular
+                        {t('most-popular')}
                       </Text>
                     </Box>
                     <Stack py={4} px={12} spacing={2}>
                       <Center>
                         <Text fontWeight="500" fontSize="2xl">
-                          Share an Event
+                          {t('share-an-event')}
                         </Text>
                       </Center>
                       <HStack justifyContent="center">
                         <Text fontSize="3xl" fontWeight="600">
-                          R$
+                          {t('price-card.coin')}
                         </Text>
                         <Text fontSize="5xl" fontWeight="900">
-                          100
+                          {t('price-card.value')}
                         </Text>
                         <Text fontSize="3xl" color="gray.500">
-                          /event
+                          {t('price-card.prefix')}
                         </Text>
                       </HStack>
                       <Flex fontSize={'lg'} color={'gray.400'} justifyContent={'space-between'}>
                         <Stack w={'full'}>
-                          <Text>Title</Text>
-                          <Text>Description</Text>
-                          <Text>Flyer</Text>
-                          <Text>Place</Text>
-                          <Text>Price per lot</Text>
+                          <Text>t{('title')}</Text>
+                          <Text>t{('description')}</Text>
+                          <Text>t{('flyer')}</Text>
+                          <Text>t{('place')}</Text>
+                          <Text>t{('price-per-lot')}</Text>
                         </Stack>
                         <Stack w={'full'}>
-                          <Text>Date Start</Text>
-                          <Text>Date End</Text>
-                          <Text>List available At</Text>
-                          <Text>Classification</Text>
-                          <Text>Status</Text>
+                          <Text>t{('date-start')}</Text>
+                          <Text>t{('date-end')}</Text>
+                          <Text>t{('list-available-at')}</Text>
+                          <Text>t{('classification')}</Text>
+                          <Text>t{('status')}</Text>
                         </Stack>
                       </Flex>
                       <Center w="100%" pt={7}>
-                        <Button w="sm" text={'Share now'}/>
+                        <Button w="sm" text={t('share-now')}/>
                       </Center>
                     </Stack>
                   </Box>
