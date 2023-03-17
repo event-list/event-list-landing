@@ -3,7 +3,6 @@ import {
   Flex,
   Stack,
   Text,
-  useColorModeValue,
 } from '@chakra-ui/react';
 import {Inter} from '@next/font/google';
 import React from 'react';
@@ -11,6 +10,8 @@ import {Logo} from '../Logo';
 import Link from "next/link";
 import Button from "../button/Button";
 import {useTranslation} from "next-i18next";
+import {useRouter} from 'next/router'
+import {RiTranslate2} from "react-icons/ri";
 
 const inter = Inter({
   weight: '400',
@@ -82,6 +83,14 @@ const MenuItem = ({children, to = '/', ...rest}: any) => {
 
 const MenuLinks = ({isOpen}: any) => {
   const {t} = useTranslation('header')
+  const router = useRouter()
+
+  const onToggleLanguageClick = (newLocale: string) => {
+    const {pathname, asPath, query} = router
+    router.push({pathname, query}, asPath, {locale: newLocale})
+  }
+
+  const changeTo = router.locale === 'pt' ? 'en' : 'pt'
 
   return (
     <Box
@@ -95,6 +104,13 @@ const MenuLinks = ({isOpen}: any) => {
         direction={['column', 'row', 'row', 'row']}
         pt={[4, 4, 0, 0]}
       >
+        <MenuItem>
+          <Flex justifyContent={'space-between'} alignItems={'center'} gap={1}>
+            <RiTranslate2 size={11}/>
+            <Text fontWeight={200} fontSize={'sm'} cursor={'pointer'}
+                  onClick={() => onToggleLanguageClick(changeTo)}>{changeTo}</Text>
+          </Flex>
+        </MenuItem>
         <MenuItem to="/">
           <Text>{t('home')}</Text>
         </MenuItem>
@@ -102,7 +118,7 @@ const MenuLinks = ({isOpen}: any) => {
           <Text>{t('services')}</Text>
         </MenuItem>
         <MenuItem to="/">
-          <Button text={t('share-now')} />
+          <Button text={t('share-now')}/>
         </MenuItem>
       </Stack>
     </Box>
