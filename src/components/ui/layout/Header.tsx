@@ -1,6 +1,6 @@
 import {
   Box,
-  Flex,
+  Flex, HStack,
   Stack,
   Text,
 } from '@chakra-ui/react';
@@ -20,6 +20,14 @@ const inter = Inter({
 
 export const Header = (props: any) => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const router = useRouter()
+
+  const onToggleLanguageClick = (newLocale: string) => {
+    const {pathname, asPath, query} = router
+    router.push({pathname, query}, asPath, {locale: newLocale})
+  }
+
+  const changeTo = router.locale === 'pt' ? 'en' : 'pt'
 
   const toggle = () => setIsOpen(!isOpen);
 
@@ -30,6 +38,13 @@ export const Header = (props: any) => {
           <Logo/>
         </Box>
       </Link>
+        <Flex flex={{base: '0.65', md: '0.8'}}>
+          <Flex justifyContent={'space-between'} alignItems={'center'} gap={1}>
+            <RiTranslate2 size={11}/>
+            <Text fontWeight={200} fontSize={'sm'} cursor={'pointer'}
+                  onClick={() => onToggleLanguageClick(changeTo)}>{changeTo}</Text>
+          </Flex>
+        </Flex>
       <MenuToggle toggle={toggle} isOpen={isOpen}/>
       <MenuLinks isOpen={isOpen}/>
     </NavBarContainer>
@@ -83,14 +98,6 @@ const MenuItem = ({children, to = '/', ...rest}: any) => {
 
 const MenuLinks = ({isOpen}: any) => {
   const {t} = useTranslation('header')
-  const router = useRouter()
-
-  const onToggleLanguageClick = (newLocale: string) => {
-    const {pathname, asPath, query} = router
-    router.push({pathname, query}, asPath, {locale: newLocale})
-  }
-
-  const changeTo = router.locale === 'pt' ? 'en' : 'pt'
 
   return (
     <Box
@@ -104,13 +111,6 @@ const MenuLinks = ({isOpen}: any) => {
         direction={['column', 'row', 'row', 'row']}
         pt={[4, 4, 0, 0]}
       >
-        <MenuItem>
-          <Flex justifyContent={'space-between'} alignItems={'center'} gap={1}>
-            <RiTranslate2 size={11}/>
-            <Text fontWeight={200} fontSize={'sm'} cursor={'pointer'}
-                  onClick={() => onToggleLanguageClick(changeTo)}>{changeTo}</Text>
-          </Flex>
-        </MenuItem>
         <MenuItem to="/">
           <Text>{t('home')}</Text>
         </MenuItem>
