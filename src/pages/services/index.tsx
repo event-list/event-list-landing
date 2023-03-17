@@ -33,9 +33,9 @@ export default function Services() {
   return (
     <Layout>
       <SnowContainer/>
-      <Stack position={'relative'} spacing={20}>
+      <Stack position={'relative'} spacing={{base: 12, sm: 20}}>
         <Box p={4} as={'section'} id={'service-banner'}>
-          <Container maxW={'80%'} py={20}>
+          <Container maxW={'80%'} py={{base: 12, sm: 20}}>
             <SimpleGrid columns={{base: 1, md: 2}} spacing={10}>
               <Stack
                 spacing={{base: 8, md: 10}}
@@ -65,13 +65,13 @@ export default function Services() {
             </SimpleGrid>
           </Container>
         </Box>
-        <Stack bgColor={'gray.900'} position={'relative'} spacing={{base: 16, sm: "40"}} py={'8rem'}>
+        <Stack bgColor={'gray.900'} position={'relative'} spacing={{base: 8, sm: "40"}} py={{base: '3rem', md: '8rem'}}>
           <Flex alignItems={'center'} justifyContent={'center'}>
             <Container as={'section'} id={'services'} maxW={'80%'}>
               <SimpleGrid columns={{base: 1, md: 2}} spacing={10}>
                 <Stack
                   spacing={{base: 8, md: 10}}
-                  py={{base: 20, md: 28}}
+                  py={2}
                 >
                   <Text
                     textTransform={'uppercase'}
@@ -90,7 +90,7 @@ export default function Services() {
                 </Stack>
                 <Stack
                   spacing={{base: 8, md: 10}}
-                  py={{base: 20, md: 28}}
+                  py={2}
                 >
                   <Text
                     textTransform={'uppercase'}
@@ -140,7 +140,6 @@ export default function Services() {
                     mb={4}
                     shadow="base"
                     borderWidth="1px"
-                    p={6}
                     borderColor={'gray.600'}
                     borderRadius={'xl'}
                     position="relative"
@@ -164,7 +163,7 @@ export default function Services() {
                     </Box>
                     <Stack py={4} px={12} spacing={2}>
                       <Center>
-                        <Text fontWeight="500" fontSize="2xl">
+                        <Text fontWeight="500" fontSize="2xl" textAlign={'center'}>
                           {t('share-an-event')}
                         </Text>
                       </Center>
@@ -181,22 +180,22 @@ export default function Services() {
                       </HStack>
                       <Flex fontSize={'lg'} color={'gray.400'} justifyContent={'space-between'}>
                         <Stack w={'full'}>
-                          <Text>t{('title')}</Text>
-                          <Text>t{('description')}</Text>
-                          <Text>t{('flyer')}</Text>
-                          <Text>t{('place')}</Text>
-                          <Text>t{('price-per-lot')}</Text>
+                          <Text fontSize={{base: 'md', sm: 'lg'}}>{t('title')}</Text>
+                          <Text fontSize={{base: 'md', sm: 'lg'}}>{t('description')}</Text>
+                          <Text fontSize={{base: 'md', sm: 'lg'}}>{t('flyer')}</Text>
+                          <Text fontSize={{base: 'md', sm: 'lg'}}>{t('place')}</Text>
+                          <Text fontSize={{base: 'md', sm: 'lg'}}>{t('price-per-lot')}</Text>
                         </Stack>
                         <Stack w={'full'}>
-                          <Text>t{('date-start')}</Text>
-                          <Text>t{('date-end')}</Text>
-                          <Text>t{('list-available-at')}</Text>
-                          <Text>t{('classification')}</Text>
-                          <Text>t{('status')}</Text>
+                          <Text fontSize={{base: 'md', sm: 'lg'}}>{t('date-start')}</Text>
+                          <Text fontSize={{base: 'md', sm: 'lg'}}>{t('date-end')}</Text>
+                          <Text fontSize={{base: 'md', sm: 'lg'}}>{t('list-available-at')}</Text>
+                          <Text fontSize={{base: 'md', sm: 'lg'}}>{t('classification')}</Text>
+                          <Text fontSize={{base: 'md', sm: 'lg'}}>{t('status')}</Text>
                         </Stack>
                       </Flex>
-                      <Center w="100%" pt={7}>
-                        <Button w="sm" text={t('share-now')}/>
+                      <Center pt={7}>
+                        <Button text={t('share-now')}/>
                       </Center>
                     </Stack>
                   </Box>
