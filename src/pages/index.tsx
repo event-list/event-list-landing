@@ -113,7 +113,7 @@ export default function Home() {
                   rounded={'md'}>
                   {t('our-goal')}
                 </Text>
-                <Heading>{t('software-as-a-service-for-you')}</Heading>
+                <Heading>{t('why-create-guest-list')}</Heading>
                 <Flex display={{base: 'flex', sm: 'none'}}>
                   <ControlPanel/>
                 </Flex>
