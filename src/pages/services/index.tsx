@@ -41,6 +41,7 @@ export default function Services() {
         bgPosition="center"
         bgSize={'cover'}
         bgRepeat="no-repeat"
+        bgAttachment={'fixed'}
       >
         <Box p={4} as={'section'} id={'service-banner'}>
           <Container maxW={'80%'} py={{ base: 12, sm: 20 }}>

@@ -54,9 +54,10 @@ export default function Home() {
         id={'home'}
         maxW={'100%'}
         bgImage={"linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url('/banner-home.jpg')"}
-        bgPosition="center"
+        bgPosition="bottom"
         bgSize={'cover'}
         bgRepeat="no-repeat"
+        bgAttachment={'fixed'}
       >
         <Flex alignItems={'center'} justifyContent={'center'}>
           <Stack
