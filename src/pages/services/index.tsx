@@ -1,5 +1,5 @@
 import Layout from "../../components/ui/layout/Layout";
-import {SnowContainer} from "../../components/ui/particles/SnowContainer";
+import { SnowContainer } from "../../components/ui/particles/SnowContainer";
 import Image from "next/image";
 import {
   Box,
@@ -12,10 +12,10 @@ import {
 } from "@chakra-ui/react";
 import H1Decorated from "../../components/ui/text/H1Decorated";
 import Button from "../../components/ui/button/Button";
-import {serverSideTranslations} from "next-i18next/serverSideTranslations";
-import {useTranslation} from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
-export async function getStaticProps({locale}) {
+export async function getStaticProps({ locale }) {
   return {
     props: {
       ...(await serverSideTranslations(locale, [
@@ -28,26 +28,31 @@ export async function getStaticProps({locale}) {
 }
 
 export default function Services() {
-  const {t} = useTranslation('services')
+  const { t } = useTranslation('services')
 
   return (
     <Layout>
       <SnowContainer/>
-      <Stack position={'relative'} spacing={{base: 12, sm: 20}}>
+      <Stack
+        as={'section'}
+        id={'services'}
+        maxW={'100%'}
+        bgImage={"linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url('/services-banner.jpg')"}
+        bgPosition="center"
+        bgSize={'cover'}
+        bgRepeat="no-repeat"
+      >
         <Box p={4} as={'section'} id={'service-banner'}>
-          <Container maxW={'80%'} py={{base: 12, sm: 20}}>
-            <SimpleGrid columns={{base: 1, md: 2}} spacing={10}>
+          <Container maxW={'80%'} py={{ base: 12, sm: 20 }}>
+            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
               <Stack
-                spacing={{base: 8, md: 10}}
+                spacing={{ base: 8, md: 10 }}
               >
                 <H1Decorated>{t('services')}</H1Decorated>
-                <Box display={{base: 'flex', sm: 'none'}}>
-                  <Image src={'/services-banner.png'} alt={'services-banner'} width={800} height={800}/>
-                </Box>
-                <Text color={'gray.400'} fontSize={'lg'}>
+                <Text fontSize={'lg'}>
                   {t('services-goodbye-manual-lists')}
                 </Text>
-                <Text color={'gray.400'} fontSize={'lg'}>
+                <Text fontSize={'lg'}>
                   {t('services-not-event-creator')}
                 </Text>
                 <Stack
@@ -59,18 +64,15 @@ export default function Services() {
                   }>
                 </Stack>
               </Stack>
-              <Box display={{base: 'none', sm: 'flex'}}>
-                <Image src={'/services-banner.png'} alt={'services-banner'} width={800} height={800}/>
-              </Box>
             </SimpleGrid>
           </Container>
         </Box>
-        <Stack bgColor={'gray.900'} position={'relative'} spacing={{base: 8, sm: "40"}} py={{base: '3rem', md: '8rem'}}>
+        <Stack bgColor={'gray.900'} position={'relative'} spacing={{ base: 8, sm: "40" }} py={{ base: '3rem', md: '8rem' }}>
           <Flex alignItems={'center'} justifyContent={'center'}>
             <Container as={'section'} id={'services'} maxW={'80%'}>
-              <SimpleGrid columns={{base: 1, md: 2}} spacing={10}>
+              <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
                 <Stack
-                  spacing={{base: 8, md: 10}}
+                  spacing={{ base: 8, md: 10 }}
                   py={2}
                 >
                   <Text
@@ -89,7 +91,7 @@ export default function Services() {
                   </Text>
                 </Stack>
                 <Stack
-                  spacing={{base: 8, md: 10}}
+                  spacing={{ base: 8, md: 10 }}
                   py={2}
                 >
                   <Text
@@ -112,10 +114,9 @@ export default function Services() {
           </Flex>
           <Flex alignItems={'center'} justifyContent={'center'}>
             <Container as={'section'} id={'prices'} maxW={'80%'}>
-              <SimpleGrid columns={{base: 1, md: 2}} spacing={10}>
+              <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
                 <Stack
-                  spacing={{base: 8, md: 10}}
-                  py={{base: 20, md: 28}}
+                  spacing={{ base: 8, md: 10 }}
                 >
                   <Text
                     textTransform={'uppercase'}
@@ -148,7 +149,7 @@ export default function Services() {
                       position="absolute"
                       top="-16px"
                       left="50%"
-                      style={{transform: 'translate(-50%)'}}>
+                      style={{ transform: 'translate(-50%)' }}>
                       <Text
                         textTransform="uppercase"
                         bg={'red.700'}
@@ -180,22 +181,22 @@ export default function Services() {
                       </HStack>
                       <Flex fontSize={'lg'} color={'gray.400'} justifyContent={'space-between'}>
                         <Stack w={'full'}>
-                          <Text fontSize={{base: 'md', sm: 'lg'}}>{t('title')}</Text>
-                          <Text fontSize={{base: 'md', sm: 'lg'}}>{t('description')}</Text>
-                          <Text fontSize={{base: 'md', sm: 'lg'}}>{t('flyer')}</Text>
-                          <Text fontSize={{base: 'md', sm: 'lg'}}>{t('place')}</Text>
-                          <Text fontSize={{base: 'md', sm: 'lg'}}>{t('price-per-lot')}</Text>
+                          <Text fontSize={{ base: 'md', sm: 'lg' }}>{t('title')}</Text>
+                          <Text fontSize={{ base: 'md', sm: 'lg' }}>{t('description')}</Text>
+                          <Text fontSize={{ base: 'md', sm: 'lg' }}>{t('flyer')}</Text>
+                          <Text fontSize={{ base: 'md', sm: 'lg' }}>{t('place')}</Text>
+                          <Text fontSize={{ base: 'md', sm: 'lg' }}>{t('price-per-lot')}</Text>
                         </Stack>
                         <Stack w={'full'}>
-                          <Text fontSize={{base: 'md', sm: 'lg'}}>{t('date-start')}</Text>
-                          <Text fontSize={{base: 'md', sm: 'lg'}}>{t('date-end')}</Text>
-                          <Text fontSize={{base: 'md', sm: 'lg'}}>{t('list-available-at')}</Text>
-                          <Text fontSize={{base: 'md', sm: 'lg'}}>{t('classification')}</Text>
-                          <Text fontSize={{base: 'md', sm: 'lg'}}>{t('status')}</Text>
+                          <Text fontSize={{ base: 'md', sm: 'lg' }}>{t('date-start')}</Text>
+                          <Text fontSize={{ base: 'md', sm: 'lg' }}>{t('date-end')}</Text>
+                          <Text fontSize={{ base: 'md', sm: 'lg' }}>{t('list-available-at')}</Text>
+                          <Text fontSize={{ base: 'md', sm: 'lg' }}>{t('classification')}</Text>
+                          <Text fontSize={{ base: 'md', sm: 'lg' }}>{t('status')}</Text>
                         </Stack>
                       </Flex>
                       <Center pt={7}>
-                        <Button text={t('share-now')}/>
+                        <Button text={t('share-now')} as={'a'} href={'https://dashboard.evtlist.com'} target={'_blank'}/>
                       </Center>
                     </Stack>
                   </Box>

@@ -1,9 +1,18 @@
 import Layout from '../components/ui/layout/Layout';
-import {FcConferenceCall, FcNews, FcPrint, FcApproval, FcLineChart, FcFlowChart} from 'react-icons/fc';
+import {
+  FcConferenceCall,
+  FcNews,
+  FcPrint,
+  FcApproval,
+  FcLineChart,
+  FcFlowChart,
+  FcVip,
+  FcPrivacy, FcMoneyTransfer
+} from 'react-icons/fc';
 import ControlPanel from '../components/assets/admin-control-panel.svg'
 import FAQs from '../components/assets/faqs.svg'
-import {SnowContainer} from '../components/ui/particles/SnowContainer';
-import {useTranslation} from 'next-i18next'
+import { SnowContainer } from '../components/ui/particles/SnowContainer';
+import { useTranslation } from 'next-i18next'
 import {
   Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel,
   Box,
@@ -18,11 +27,11 @@ import {
 } from "@chakra-ui/react";
 import H1Decorated from "../components/ui/text/H1Decorated";
 import Button from "../components/ui/button/Button";
-import {ReactElement} from "react";
+import { ReactElement } from "react";
 import Link from "next/link";
-import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-export async function getStaticProps({locale}) {
+export async function getStaticProps({ locale }) {
   return {
     props: {
       ...(await serverSideTranslations(locale, [
@@ -35,21 +44,29 @@ export async function getStaticProps({locale}) {
 }
 
 export default function Home() {
-  const {t} = useTranslation('index')
+  const { t } = useTranslation('index')
 
   return (
     <Layout>
       <SnowContainer/>
-      <Container as={'section'} id={'home'} maxW={'80%'}>
+      <Stack
+        as={'section'}
+        id={'home'}
+        maxW={'100%'}
+        bgImage={"linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url('/banner-home.jpg')"}
+        bgPosition="center"
+        bgSize={'cover'}
+        bgRepeat="no-repeat"
+      >
         <Flex alignItems={'center'} justifyContent={'center'}>
           <Stack
             align={'center'}
-            spacing={{base: 8, md: 10}}
-            py={{base: 20, md: 28}}
+            spacing={{ base: 8, md: 10 }}
+            py={{ base: 20, md: 28 }}
           >
-            <Center fontSize={{base: '2xl', md: '5xl'}}>{t('new-way')}</Center>
+            <Center fontSize={{ base: '2xl', md: '5xl' }} fontWeight={'bold'}>{t('new-way')}</Center>
             <H1Decorated textAlign={'center'}>{t('share-your-events')}</H1Decorated>
-            <Text color={'gray.400'} textAlign={'center'}>
+            <Text textAlign={'center'}>
               {t('share-event-short-description')}
             </Text>
             <HStack
@@ -57,51 +74,89 @@ export default function Home() {
               spacing={3}
               align={'center'}
               alignSelf={'center'}
-              position={'relative'}>
+              position={'relative'}
+            >
               <Link href={'/services#prices'}>
                 <Button text={t('prices')}/>
               </Link>
-              <Link href={'/'}>
+              <Link href={'https://dashboard.evtlist.com'} target={'_blank'}>
                 <Button text={t('share-now')}/>
               </Link>
             </HStack>
           </Stack>
         </Flex>
-      </Container>
-      <Stack bgColor={'gray.900'} position={'relative'} spacing={{base: 8, sm: "40"}} py={{base: '3rem', md: '8rem'}}>
-        <Box as={'section'} id={'features'}>
-          <Container maxW={'80%'} py={2}>
-            <SimpleGrid columns={{base: 1, md: 3}} spacing={10}>
-              <Feature
-                icon={<Icon as={FcNews} w={10} h={10}/>}
-                title={t('control-in-your-hands')}
-                text={
-                  t('control-in-your-hands-description')
-                }
-              />
-              <Feature
-                icon={<Icon as={FcConferenceCall} w={10} h={10}/>}
-                title={t('available-for-everyone')}
-                text={
-                  t('available-for-everyone-description')
-                }
-              />
-              <Feature
-                icon={<Icon as={FcPrint} w={10} h={10}/>}
-                title={t('guest-list-whenever-you-want')}
-                text={
-                  t('guest-list-whenever-you-want-description')
-                }
-              />
-            </SimpleGrid>
-          </Container>
-        </Box>
+      </Stack>
+      <Stack bgColor={'gray.900'} position={'relative'} spacing={{ base: 8, sm: "40" }}
+             py={{ base: '3rem', md: '8rem' }}>
+        <Container maxW={'80%'}>
+          <Stack id={'features'} justifyContent={'center'} spacing={{ base: 8, md: 10 }}>
+            <Text
+              textTransform={'uppercase'}
+              fontWeight={600}
+              fontSize={'sm'}
+              bg={'red.500'}
+              p={2}
+              alignSelf={'flex-start'}
+              rounded={'md'}>
+              {t('benefits')}
+            </Text>
+            <Heading>{t('benefits-title')}</Heading>
+            <Stack id={'features'} justifyContent={'center'} spacing={{ base: 8, sm: 20 }}>
+              <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
+                <Feature
+                  icon={<Icon as={FcNews} w={10} h={10}/>}
+                  title={t('control-in-your-hands')}
+                  text={
+                    t('control-in-your-hands-description')
+                  }
+                />
+                <Feature
+                  icon={<Icon as={FcConferenceCall} w={10} h={10}/>}
+                  title={t('available-for-everyone')}
+                  text={
+                    t('available-for-everyone-description')
+                  }
+                />
+                <Feature
+                  icon={<Icon as={FcPrint} w={10} h={10}/>}
+                  title={t('guest-list-whenever-you-want')}
+                  text={
+                    t('guest-list-whenever-you-want-description')
+                  }
+                />
+              </SimpleGrid>
+              <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
+                <Feature
+                  icon={<Icon as={FcMoneyTransfer} w={10} h={10}/>}
+                  title={t('batch-prices')}
+                  text={
+                    t('batch-prices-description')
+                  }
+                />
+                <Feature
+                  icon={<Icon as={FcPrivacy} w={10} h={10}/>}
+                  title={t('private-and-public-events')}
+                  text={
+                    t('private-and-public-events-description')
+                  }
+                />
+                <Feature
+                  icon={<Icon as={FcVip} w={10} h={10}/>}
+                  title={t('custom-batch-prices')}
+                  text={
+                    t('custom-batch-prices-description')
+                  }
+                />
+              </SimpleGrid>
+            </Stack>
+          </Stack>
+        </Container>
         <Flex alignItems={'center'} justifyContent={'center'}>
           <Container as={'section'} id={'goal'} maxW={'80%'}>
-            <SimpleGrid columns={{base: 1, md: 2}} spacing={10}>
+            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
               <Stack
-                spacing={{base: 8, md: 10}}
-                py={{base: 20, md: 28}}
+                spacing={{ base: 8, md: 10 }}
+                py={{ base: 20, md: 28 }}
               >
                 <Text
                   textTransform={'uppercase'}
@@ -111,10 +166,10 @@ export default function Home() {
                   p={2}
                   alignSelf={'flex-start'}
                   rounded={'md'}>
-                  {t('our-goal')}
+                  {t('why-create-guest-list')}
                 </Text>
-                <Heading>{t('why-create-guest-list')}</Heading>
-                <Flex display={{base: 'flex', sm: 'none'}}>
+                <Heading>{t('why-create-guest-list-title')}</Heading>
+                <Flex display={{ base: 'flex', sm: 'none' }}>
                   <ControlPanel/>
                 </Flex>
                 <Text color={'gray.400'} fontSize={'lg'}>
@@ -148,7 +203,7 @@ export default function Home() {
                   />
                 </Stack>
               </Stack>
-              <Flex display={{base: 'none', sm: 'flex'}}>
+              <Flex display={{ base: 'none', sm: 'flex' }}>
                 <ControlPanel/>
               </Flex>
             </SimpleGrid>
@@ -156,13 +211,13 @@ export default function Home() {
         </Flex>
         <Flex alignItems={'center'} justifyContent={'center'}>
           <Container as={'section'} id={'faq'} maxW={'80%'}>
-            <SimpleGrid columns={{base: 1, md: 2}} spacing={10}>
-              <Flex display={{base: 'none', sm: 'flex'}}>
+            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+              <Flex display={{ base: 'none', sm: 'flex' }}>
                 <FAQs/>
               </Flex>
               <Stack
-                spacing={{base: 8, md: 10}}
-                py={{base: 20, md: 28}}
+                spacing={{ base: 8, md: 10 }}
+                py={{ base: 20, md: 28 }}
               >
                 <Text
                   textTransform={'uppercase'}
@@ -175,7 +230,7 @@ export default function Home() {
                   {t('faq')}
                 </Text>
                 <Heading>{t('frequently-asked-questions')}</Heading>
-                <Flex display={{base: 'flex', sm: 'none'}}>
+                <Flex display={{ base: 'flex', sm: 'none' }}>
                   <FAQs/>
                 </Flex>
                 <Accordion allowMultiple>
@@ -250,7 +305,7 @@ interface FeatureProps {
   icon: ReactElement;
 }
 
-const Feature = ({title, text, icon}: FeatureProps) => {
+const Feature = ({ title, text, icon }: FeatureProps) => {
   return (
     <Stack>
       <Flex
@@ -275,7 +330,7 @@ interface RowProps {
   icon?: ReactElement;
 }
 
-const Row = ({text, icon}: RowProps) => {
+const Row = ({ text, icon }: RowProps) => {
   return (
     <Stack direction={'row'} align={'center'}>
       <Flex
