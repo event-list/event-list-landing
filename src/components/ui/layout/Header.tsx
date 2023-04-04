@@ -116,7 +116,7 @@ const MenuLinks = ({isOpen}: any) => {
         <MenuItem to="/services">
           <Text>{t('services')}</Text>
         </MenuItem>
-        <MenuItem to="/">
+        <MenuItem to='https://dashboard.evtlist.com'>
           <Button text={t('share-now')}/>
         </MenuItem>
       </Stack>
@@ -137,6 +137,8 @@ const NavBarContainer = ({children, ...props}: any) => {
       bg={'gray.900'}
       color={'gray.200'}
       height="fit-content"
+      borderBottom={'1px'}
+      borderColor='gray.800'
       {...props}
     >
       {children}
