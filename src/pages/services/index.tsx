@@ -8,7 +8,7 @@ import {
   Container,
   Text,
   StackDivider,
-  useColorModeValue, Heading, Flex, HStack, Center
+  useColorModeValue, Heading, Flex, HStack, Center, Link
 } from "@chakra-ui/react";
 import H1Decorated from "../../components/ui/text/H1Decorated";
 import Button from "../../components/ui/button/Button";
@@ -67,7 +67,8 @@ export default function Services() {
             </SimpleGrid>
           </Container>
         </Box>
-        <Stack bgColor={'gray.900'} position={'relative'} spacing={{ base: 8, sm: "40" }} py={{ base: '3rem', md: '8rem' }}>
+        <Stack bgColor={'gray.900'} position={'relative'} spacing={{ base: 8, sm: "40" }}
+               py={{ base: '3rem', md: '8rem' }}>
           <Flex alignItems={'center'} justifyContent={'center'}>
             <Container as={'section'} id={'services'} maxW={'80%'}>
               <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
@@ -196,7 +197,9 @@ export default function Services() {
                         </Stack>
                       </Flex>
                       <Center pt={7}>
-                        <Button text={t('share-now')} as={'a'} href={'https://dashboard.evtlist.com'} target={'_blank'}/>
+                        <Link href={'https://dashboard.evtlist.com'} target={'_blank'}>
+                          <Button text={t('share-now')} />
+                        </Link>
                       </Center>
                     </Stack>
                   </Box>
@@ -207,5 +210,5 @@ export default function Services() {
         </Stack>
       </Stack>
     </Layout>
-  )
+)
 }
