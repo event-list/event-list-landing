@@ -14,12 +14,12 @@
   "price": "Price",
   "pay-per-event": "Pay per event. No subscriptions",
   "no-montly": "You only pay for what you share, no monthly subscription.",
-  "enjoy-share-an-event": "There is a single charge of R$50 for creating an account as a Merchant, then enjoy sharing as many events as you want",
+  "enjoy-share-an-event": "Enjoy sharing as many events as you want.",
 
   "most-popular": "Most Popular",
   "price-card": {
     "coin": "R$",
-    "value": "100",
+    "value": "20",
     "prefix": "/event"
   },
 
@@ -27,7 +27,7 @@
   "description": "Description",
   "flyer": "Flyer",
   "place": "Place",
-  "price-per-lot": "Price per lot",
+  "price-per-lot": "Batch prices",
   "date-start": "Date Start",
   "date-end": "Date End",
   "list-available-at": "List available At",

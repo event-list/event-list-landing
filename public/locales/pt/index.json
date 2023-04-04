@@ -6,6 +6,9 @@
   "share-now": "Compartilhe seu evento agora",
   "start-at": "Comece com R$50",
 
+  "benefits": "Benefícios",
+  "benefits-title": "O que podemos fazer por você",
+
   "control-in-your-hands": "Controle nas suas mãos",
   "control-in-your-hands-description": "Gerencie a lista da maneira que você desejar, adicione nomes, troque nomes entre lotes...",
 
@@ -15,8 +18,17 @@
   "guest-list-whenever-you-want": "Lista de participantes quando você quiser",
   "guest-list-whenever-you-want-description": "Gere a lista de participantes da maneira e momento que você quiser, excel, google sheets, impressa...",
 
-  "our-goal": "Nosso Objetivo",
-  "why-create-guest-list": "Por quê criar uma lista de convidados?",
+  "batch-prices": "Lotes de preços",
+  "batch-prices-description": "Crie lotes de preço para seu evento definindo o valor e data do lote, gerencie o preço como quiser",
+
+  "private-and-public-events": "Crie eventos privados e publicos",
+  "private-and-public-events-description": "Crie seu evento apenas para aqueles que tiverem o link de acesso, ou divulgue no nosso catalogo de eventos para todos",
+
+  "custom-batch-prices": "Lotes personalizados",
+  "custom-batch-prices-description": "Defina lotes personalizados como 'Free', 'Aniversariantes', 'Vips', entre outros...",
+
+  "why-create-guest-list": "Objetivo",
+  "why-create-guest-list-title": "Por quê criar uma lista de convidados?",
 
   "our-goal-first-p": "Evite se surpreender com a quantidade pessoas no seu evento, faça o controle da lista divulgando ela e preparando sua casa para receber o que está previsto. Tenha um maior controle do seu evento e da quantidade de participantes que irão.",
   "our-goal-second-p": "Com um bom controle de lista você pode se preparar para o evento. Compre o recurso necessário, evite que falte itens, contrate funcionários o suficiente!",

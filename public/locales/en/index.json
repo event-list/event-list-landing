@@ -6,6 +6,9 @@
   "share-now": "Share your event now",
   "start-at": "Starting at R$50",
 
+  "benefits": "Benefits",
+  "benefits-title": "What can we do for you",
+
   "control-in-your-hands": "Control in your hands",
   "control-in-your-hands-description": "Manage the list the way you want, add names, switch names between lots...",
 
@@ -15,8 +18,17 @@
   "guest-list-whenever-you-want": "Guest list whenever you want",
   "guest-list-whenever-you-want-description": "Take the guest list the way and the time you want, excel, google spreadsheets, printed...",
 
-  "our-goal": "Our Goal",
-  "why-create-guest-list": "Why create a guest list?",
+  "batch-prices": "Batches",
+  "batch-prices-description": "Create price batches for your event by definig the batch value and date, manage the price as you wish",
+
+  "private-and-public-events": "Create private and public events",
+  "private-and-public-events-description": "Create your event only for those who have the access link, or share it in our event catalog for everyone",
+
+  "custom-batch-prices": "Custom batches",
+  "custom-batch-prices-description": "Define custom batches like 'Free', 'Birthdays', 'Vips'...",
+
+  "why-create-guest-list": "Goal",
+  "why-create-guest-list-title": "Why create a guest list?",
 
   "our-goal-first-p": "Avoid being surprised by the number of people at your event, control the list by publicizing it and preparing your home to receive what is planned. Have greater control of your event and the number of participants who will attend.",
   "our-goal-second-p": "With good list control you can prepare for the event. Buy the necessary resource, avoid missing items, hire enough employees!",

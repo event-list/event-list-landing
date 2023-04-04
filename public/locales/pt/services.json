@@ -14,12 +14,12 @@
   "price": "Preço",
   "pay-per-event": "Pague por evento. Sem assinaturas",
   "no-montly": "Você paga apenas pelo que compartilha, sem assinatura mensal.",
-  "enjoy-share-an-event": "A cobrança é única de R$ 50 para criar uma conta como Merchant, então divirta-se compartilhando quantos eventos quiser",
+  "enjoy-share-an-event": "Divirta-se compartilhando quantos eventos quiser.",
 
   "most-popular": "Mais Popular",
   "price-card": {
     "coin": "R$",
-    "value": "100",
+    "value": "20",
     "prefix": "/evento"
   },
 
@@ -27,7 +27,7 @@
   "description": "Descrição",
   "flyer": "Flyer",
   "place": "Local",
-  "price-per-lot": "Preço por lote",
+  "price-per-lot": "Lotes de preços",
   "date-start": "Data de Início",
   "date-end": "Data de Fim",
   "list-available-at": "Horario de lista disponível",
