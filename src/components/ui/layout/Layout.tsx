@@ -18,7 +18,7 @@ export default function Layout(props: {
           : t('title')}
       </title>
       <Header/>
-      <Box pt={'80px'} pb={{base: '160px', sm: '70px'}} minH={'100vh'}>
+      <Box pt={'80px'} minH={'100vh'}>
         {props.children}
       </Box>
       <Footer/>
