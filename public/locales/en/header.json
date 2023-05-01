@@ -1,5 +1,11 @@
 {
   "home": "Home",
   "services": "Services",
-  "share-now": "Share your event now"
+  "share-now": "Share your event now",
+  "Company": "Company",
+  "Support": "Support",
+  "About us": "About us",
+  "Terms of Service": "Terms of Service",
+  "Pricing": "Pricing",
+  "Contact us": "Contact us"
 }

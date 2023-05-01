@@ -12,6 +12,7 @@ import {
 import type { ReactNode } from 'react';
 import { FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { Logo } from '../Logo';
+import { useTranslation } from 'next-i18next';
 
 const SocialButton = ({
   children,
@@ -56,6 +57,8 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 };
 
 export default function Footer() {
+  const {t} = useTranslation('header')
+
   return (
     <Box
       role="contentinfo"
@@ -74,14 +77,14 @@ export default function Footer() {
       <Container as={Stack} maxW={'6xl'}>
         <SimpleGrid templateColumns={{ sm: '1fr 1fr', md: '2fr 2fr 2fr' }} spacing={8}>
           <Stack align={'flex-start'}>
-            <ListHeader>Company</ListHeader>
-            <Link href={'/'}>About us</Link>
-            <Link href={'mailto:viblaziusgoulart@gmail.com'}>Contact us</Link>
-            <Link href={'services#prices'}>Pricing</Link>
+            <ListHeader>{t('Company')}</ListHeader>
+            <Link href={'/'}>{t('About us')}</Link>
+            <Link href={'mailto:viblaziusgoulart@gmail.com'}>{t('Contact us')}</Link>
+            <Link href={'services#prices'}>{t('Pricing')}</Link>
           </Stack>
           <Stack align={'flex-start'}>
-            <ListHeader>Support</ListHeader>
-            <Link href={'#'}>Terms of Service</Link>
+            <ListHeader>{t('Support')}</ListHeader>
+            <Link href={'#'}>{t('Terms of Service')}</Link>
           </Stack>
           <Stack spacing={6}>
             <Box w="40">

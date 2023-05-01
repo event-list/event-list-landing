@@ -20,14 +20,6 @@ const inter = Inter({
 
 export const Header = (props: any) => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const router = useRouter()
-
-  const onToggleLanguageClick = (newLocale: string) => {
-    const {pathname, asPath, query} = router
-    router.push({pathname, query}, asPath, {locale: newLocale})
-  }
-
-  const changeTo = router.locale === 'pt' ? 'en' : 'pt'
 
   const toggle = () => setIsOpen(!isOpen);
 
@@ -38,12 +30,6 @@ export const Header = (props: any) => {
           <Logo/>
         </Box>
       </Link>
-        <Flex flex={{base: '0.65', md: '0.8'}} cursor={'pointer'} onClick={() => onToggleLanguageClick(changeTo)}>
-          <Flex justifyContent={'space-between'} alignItems={'center'} gap={1}>
-            <RiTranslate2 size={11}/>
-            <Text fontWeight={200} fontSize={'sm'}>{changeTo}</Text>
-          </Flex>
-        </Flex>
       <MenuToggle toggle={toggle} isOpen={isOpen}/>
       <MenuLinks isOpen={isOpen}/>
     </NavBarContainer>
